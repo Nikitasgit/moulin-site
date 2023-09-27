@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://moulincasta.onrender.com",
     credentials: true,
     optionsSuccessStatus: 200,
   })
