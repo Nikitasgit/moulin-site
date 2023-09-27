@@ -33,7 +33,7 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
   const [loading, setLoading] = useState(false);
   const [admin, setAdmin] = useState(false);
   const handlePassword = (password) => {
-    if (password == process.env.ADMIN_PASSWORD) {
+    if (password == process.env.REACT_APP_PASSWORD) {
       setAdmin(true);
     }
   };
