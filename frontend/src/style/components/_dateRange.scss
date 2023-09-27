@@ -53,8 +53,7 @@ div:has(> .calendarWrap) {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   .calendarElement {
-    max-width: 500px;
-    width: 100%;
+    max-width: 350px;
     right: 0px;
     top: -30px;
     z-index: 50;
@@ -170,4 +169,10 @@ div:has(> .calendarWrap) {
       }
     }
   }
+}
+.rdrMonth {
+  width: 100%;
+}
+.rdrCalendarWrapper {
+  width: 100%;
 }
