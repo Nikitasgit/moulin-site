@@ -25,12 +25,12 @@ const Bergerie = () => {
 
   useEffect(() => {
     let array = [];
-    axios.get("http://localhost:5010/defaultRate/").then((res) =>
+    axios.get("https://moulincasta.onrender.com/defaultRate/").then((res) =>
       res.data.map((el) => {
         if (el.accomodation === "bergerie") setDefaultRate(el);
       })
     );
-    axios.get("http://localhost:5010/rate/").then((res) => {
+    axios.get("https://moulincasta.onrender.com/rate/").then((res) => {
       res.data.map((el) => {
         if (el.accomodation === "bergerie") array.push(el);
       });

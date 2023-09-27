@@ -58,7 +58,7 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
         };
 
         axios
-          .post("http://localhost:5010/rate/", data)
+          .post("https://moulincasta.onrender.com/rate/", data)
           .then((response) => {
             // Handle success if needed
           })
@@ -77,7 +77,7 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
     rates.map((rate) => {
       if (new Date(rate.date) < yesterday) {
         axios
-          .delete("http://localhost:5010/rate/" + rate._id)
+          .delete("https://moulincasta.onrender.com/rate/" + rate._id)
           .then((response) => {
             // Handle success if needed
           })
@@ -95,7 +95,7 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
 
     let selectedDates = rates.filter((o) => dates.find((x) => x === o.date));
     const updatePromises = selectedDates.map((el) => {
-      return axios.put("http://localhost:5010/rate/" + el._id, {
+      return axios.put("https://moulincasta.onrender.com/rate/" + el._id, {
         available: false,
       });
     });
@@ -115,11 +115,11 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
     if (newDefaultRate > 30 || newDefaultRate === Number) {
       setLoading(true);
       const defaultRateUpdate = axios.put(
-        "http://localhost:5010/defaultRate/" + defaultRate._id,
+        "https://moulincasta.onrender.com/defaultRate/" + defaultRate._id,
         { defaultRate: newDefaultRate }
       );
       const rateUpdates = rates.map((r) => {
-        return axios.put("http://localhost:5010/rate/" + r._id, {
+        return axios.put("https://moulincasta.onrender.com/rate/" + r._id, {
           rate: newDefaultRate,
         });
       });
@@ -144,7 +144,7 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
 
       let selectedDates = rates.filter((o) => dates.find((x) => x === o.date));
       const updatePromises = selectedDates.map((el) => {
-        return axios.put("http://localhost:5010/rate/" + el._id, {
+        return axios.put("https://moulincasta.onrender.com/rate/" + el._id, {
           rate: periodRate,
         });
       });
@@ -177,7 +177,7 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
 
     let selectedDates = blockedDates.filter((o) => dates.includes(o.date));
     const updatePromises = selectedDates.map((d) => {
-      return axios.put("http://localhost:5010/rate/" + d._id, {
+      return axios.put("https://moulincasta.onrender.com/rate/" + d._id, {
         available: true,
       });
     });
