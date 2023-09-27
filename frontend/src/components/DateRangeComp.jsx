@@ -352,7 +352,7 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
   };
   ////////////////////////////////////////////
   return (
-    <div className="calendar">
+    <div>
       {loading && (
         <div className="loading">
           <div className="loading-spinner-container">
@@ -401,7 +401,7 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
                 disabledDates={disabledDates}
                 minDate={calendarStart}
                 maxDate={calendarEnd}
-                months={2}
+                months={1}
                 direction="horizontal"
                 className="calendarElement"
               />

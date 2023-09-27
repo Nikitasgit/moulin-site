@@ -34,139 +34,139 @@
     }
   }
 }
-.calendar {
+div:has(> .calendarWrap) {
+  width: 100%;
+}
+.calendarWrap {
   width: 100%;
   height: 100%;
-  .calendarWrap {
+  background: white;
+  min-height: 300px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 auto;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  .calendarElement {
+    max-width: 500px;
     width: 100%;
-    height: 100%;
-    background: white;
-    min-height: 300px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    padding: 15px;
+    right: 0px;
+    top: -30px;
+    z-index: 50;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .accomodation-input {
+    padding-bottom: 5px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 8px;
-    margin: 0 auto;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-    .calendarElement {
-      max-width: 500px;
-      right: 0px;
-      top: -30px;
-      z-index: 50;
-      position: absolute;
-      border-radius: 10px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-    .accomodation-input {
-      padding-bottom: 5px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      input {
-        border: 0 none;
-        font-size: 1rem;
-
-        font-weight: 500;
-        &:focus {
-          border: 0 none;
-          outline: none;
-        }
-      }
-    }
-
-    .input-name,
-    .input-email,
-    .travelers,
-    .input-phone,
-    textarea {
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid lightgrey;
-      resize: none;
-    }
-
-    .travelers {
-      display: flex;
-      gap: 15px;
-      align-items: flex-end;
-      margin-bottom: 10px;
-      .travelers-input {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-
-        input {
-          max-width: 30px;
-          border: none;
-          &:focus {
-            outline: none;
-          }
-        }
-      }
-    }
-    .button {
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 1.3rem;
-      background: rgb(108, 145, 131);
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: white;
-      border: 1px solid lightgray;
-      cursor: pointer;
-      transition: 0.4s;
-      &:hover {
-        background: rgb(95, 128, 115);
-      }
-    }
-    .total {
+    align-items: center;
+    gap: 5px;
+    input {
       border: 0 none;
-      font-size: 1.2rem;
-      max-width: 50px;
+      font-size: 1rem;
+
       font-weight: 500;
       &:focus {
         border: 0 none;
         outline: none;
       }
     }
-    h5 {
-      min-height: 18.4px;
-    }
-    .calendar-editor {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      & > div {
-        border: 1px solid black;
-        border-radius: 2px;
-        padding: 5px;
-        width: 100%;
-        justify-content: center;
-        display: flex;
-        gap: 3px;
-        flex-direction: column;
-      }
-      button {
-        padding: 1px 4px;
-        cursor: pointer;
-      }
-      input {
-        padding: 1px 4px;
-      }
-      .available-dates {
-        gap: 2px;
+  }
 
-        .date-inputs {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          gap: 5px;
+  .input-name,
+  .input-email,
+  .travelers,
+  .input-phone,
+  textarea {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    resize: none;
+  }
+
+  .travelers {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    .travelers-input {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      input {
+        max-width: 30px;
+        border: none;
+        &:focus {
+          outline: none;
         }
+      }
+    }
+  }
+  .button {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    background: rgb(108, 145, 131);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      background: rgb(95, 128, 115);
+    }
+  }
+  .total {
+    border: 0 none;
+    font-size: 1.2rem;
+    max-width: 50px;
+    font-weight: 500;
+    &:focus {
+      border: 0 none;
+      outline: none;
+    }
+  }
+  h5 {
+    min-height: 18.4px;
+  }
+  .calendar-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    & > div {
+      border: 1px solid black;
+      border-radius: 2px;
+      padding: 5px;
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      gap: 3px;
+      flex-direction: column;
+    }
+    button {
+      padding: 1px 4px;
+      cursor: pointer;
+    }
+    input {
+      padding: 1px 4px;
+    }
+    .available-dates {
+      gap: 2px;
+
+      .date-inputs {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
       }
     }
   }
