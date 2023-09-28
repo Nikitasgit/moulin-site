@@ -128,6 +128,9 @@ nav {
       display: block;
     }
   }
+  @media screen and (max-height: 320px) {
+    height: 70px;
+  }
 }
 
 .dropdown {
@@ -136,6 +139,9 @@ nav {
   position: fixed;
   width: 100%;
   padding-top: 80px;
+  @media screen and (max-height: 320px) {
+    padding-top: 70px;
+  }
   .dropdown-first-container {
     height: 100%;
     background-color: rgb(223, 223, 208);
