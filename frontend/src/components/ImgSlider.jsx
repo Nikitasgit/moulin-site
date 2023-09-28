@@ -79,6 +79,7 @@ const ImgSlider = ({ images }) => {
           (image, index) =>
             index < 5 && (
               <div
+                key={image}
                 className={
                   image == array[0]
                     ? "main img-container skeleton"

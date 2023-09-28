@@ -80,9 +80,13 @@ nav {
         gap: 5px;
         height: 100%;
         cursor: pointer;
+        transition: 0.4s;
         .rotate {
           transform: rotate(180deg);
           transition: 0.3s;
+        }
+        &:hover {
+          color: rgb(133, 133, 133);
         }
       }
     }
@@ -94,22 +98,25 @@ nav {
       transition: 0.5s;
       letter-spacing: 1px;
       cursor: pointer;
-      &:hover {
-        color: rgb(0, 0, 0);
+    }
+    .contact-navbar-container {
+      transition: 0.4s;
+      .contact-navbar-icon {
+        margin-right: 5px;
       }
+      &:hover {
+        color: rgb(133, 133, 133);
+      }
+    }
+  }
+  @media screen and (max-width: 550px) {
+    gap: 15px;
+    .accomodations-navbar,
+    .contact-navbar {
+      display: none;
     }
     .contact-navbar-icon {
-      margin-right: 5px;
-    }
-    @media screen and (max-width: 550px) {
-      gap: 15px;
-      .accomodations-navbar,
-      .contact-navbar {
-        display: none;
-      }
-      .contact-navbar-icon {
-        display: block;
-      }
+      display: block;
     }
   }
 }
@@ -146,7 +153,8 @@ nav {
       &:hover {
         box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
         transform: translateY(-7px);
-        background-color: rgb(245, 245, 245);
+
+        color: rgb(108, 145, 131);
         cursor: pointer;
       }
       .img-dropdown {
@@ -257,8 +265,6 @@ nav {
     height: 145px;
     .dropdown-first-container {
       .dropdown-element {
-        .img-dropdown {
-        }
         .dropdown-element-text {
           h3 {
             font-size: 0.8rem;

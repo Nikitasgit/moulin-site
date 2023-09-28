@@ -32,7 +32,7 @@ const Contact = () => {
         (error) => {
           console.log(error.text);
           formMess.innerHTML =
-            "<p class='error'>Une erreur s'est produite, veuillez réessayer</p>";
+            "<p className='error'>Une erreur s'est produite, veuillez réessayer</p>";
           setTimeout(() => {
             formMess.innerHTML = "";
           }, 2500);
@@ -40,7 +40,7 @@ const Contact = () => {
       );
   };
   return (
-    <div className="contact-page">
+    <div className="contact-page skeleton">
       <NavBar />
       {/*       <img
         className="img-contact-page"

@@ -306,12 +306,14 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
   const sendEmail = (e) => {
     e.preventDefault();
     if (
-      range[0].startDate.getDay() == 6 &&
-      range[0].endDate.getDay() == 6 &&
-      dates.length > 6 &&
-      dates.length < 31
+      (accomodation == "moulin" &&
+        range[0].startDate.getDay() == 6 &&
+        range[0].endDate.getDay() == 6 &&
+        dates.length > 6 &&
+        dates.length < 31) ||
+      (accomodation == "bergerie" && dates.length < 31)
     ) {
-      emailjs
+      return emailjs
         .sendForm(
           "service_fgm7jc6",
           "template_l6sypol",
@@ -332,23 +334,28 @@ const DateRangeComp = ({ accomodation, defaultRate, accommodationRates }) => {
           (error) => {
             console.log(error.text);
             formMess.innerHTML =
-              "<p class='error'>Une erreur s'est produite, veuillez réessayer</p>";
+              "<p className='error'>Une erreur s'est produite, veuillez réessayer</p>";
             setTimeout(() => {
               formMess.innerHTML = "";
             }, 2500);
           }
         );
     } else {
-      alert(
-        "Veuillez selectionner une semaine minimum du samedi au samedi et moins de 31 jours."
-      );
-      datesRef.current.style.color = " red";
-      datesRef.current.style.border = "1px solid red";
-      setTimeout(() => {
-        datesRef.current.style.color = "";
-        datesRef.current.style.border = "";
-      }, 2500);
+      if (accomodation == "moulin") {
+        alert(
+          "Réservations uniquement du samedi au samedi et moins de 31 jours."
+        );
+      }
+      if (accomodation == "bergerie") {
+        alert("Veuillez sélectionner une période inférieure à 31 jours.");
+      }
     }
+    datesRef.current.style.color = " red";
+    datesRef.current.style.border = "1px solid red";
+    setTimeout(() => {
+      datesRef.current.style.color = "";
+      datesRef.current.style.border = "";
+    }, 2500);
   };
   ////////////////////////////////////////////
   return (

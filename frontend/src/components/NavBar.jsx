@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { BiChevronDown } from "react-icons/bi";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import { HiMenuAlt3 } from "react-icons/hi";
 import imgBergerie from "../assets/img/img-bergerie/bergerie-1.jpg";
@@ -62,9 +61,9 @@ const NavBar = () => {
               <li className="accomodations-navbar">Nos logements</li>
             </div>
           </div>
-          <NavLink to="/contact">
-            <SlEnvolopeLetter class="contact-navbar-icon" />
-            <li class="contact-navbar">Nous contacter</li>
+          <NavLink className="contact-navbar-container" to="/contact">
+            <SlEnvolopeLetter className="contact-navbar-icon" />
+            <li className="contact-navbar">Nous contacter</li>
           </NavLink>
         </ul>
       </nav>
