@@ -111,9 +111,18 @@ nav {
   }
   @media screen and (max-width: 550px) {
     gap: 15px;
-    .accomodations-navbar,
-    .contact-navbar {
-      display: none;
+    .dropdown-container {
+      .accomodations-menu {
+        .accomodations-navbar {
+          display: none;
+        }
+      }
+    }
+
+    .contact-navbar-container {
+      .contact-navbar {
+        display: none;
+      }
     }
     .contact-navbar-icon {
       display: block;
@@ -154,7 +163,6 @@ nav {
         box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
         transform: translateY(-7px);
 
-        color: rgb(108, 145, 131);
         cursor: pointer;
       }
       .img-dropdown {

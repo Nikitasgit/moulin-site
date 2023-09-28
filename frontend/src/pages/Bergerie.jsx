@@ -9,7 +9,7 @@ import { GiWaterfall, GiBarbecue, GiPillow } from "react-icons/gi";
 import { VscPerson } from "react-icons/vsc";
 import { MdOutlineBed } from "react-icons/md";
 import { LuBedSingle, LuParkingSquare, LuShowerHead } from "react-icons/lu";
-import videoBg from "../assets/video/drone-corsica.mp4";
+import videoBg from "../assets/video/beach-corsica-drone.mp4";
 import Footer from "../components/Footer";
 import {
   PiBaseballThin,
@@ -137,10 +137,10 @@ const Bergerie = () => {
               </ul>
               <div
                 onClick={(e) => handleVideo(e)}
-                className="video-accomodation-container"
+                className="video-accomodation-container skeleton"
               >
                 <video
-                  className="skeleton video-accomodation"
+                  className=" video-accomodation"
                   ref={videoRef}
                   src={videoBg}
                   loop

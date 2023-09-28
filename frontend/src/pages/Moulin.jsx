@@ -20,7 +20,7 @@ import {
 } from "react-icons/pi";
 import ImgSlider from "../components/ImgSlider";
 import DateRangeComp from "../components/DateRangeComp";
-import videoBg from "../assets/video/drone-corsica.mp4";
+import videoBg from "../assets/video/beach-corsica-drone.mp4";
 import axios from "axios";
 import Footer from "../components/Footer";
 const Moulin = () => {
@@ -149,10 +149,10 @@ const Moulin = () => {
               </ul>
               <div
                 onClick={(e) => handleVideo(e)}
-                className="video-accomodation-container"
+                className="video-accomodation-container skeleton"
               >
                 <video
-                  className="skeleton video-accomodation"
+                  className=" video-accomodation"
                   ref={videoRef}
                   src={videoBg}
                   loop
