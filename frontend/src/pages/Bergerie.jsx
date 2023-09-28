@@ -141,6 +141,7 @@ const Bergerie = () => {
               >
                 <video
                   className=" video-accomodation"
+                  loading="lazy"
                   ref={videoRef}
                   src={videoBg}
                   loop

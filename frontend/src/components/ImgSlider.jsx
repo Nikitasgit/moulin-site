@@ -56,7 +56,9 @@ const ImgSlider = ({ images }) => {
           >
             <BsChevronLeft />
           </span>
+
           <img
+            loading="lazy"
             key={count}
             src={images[array[count]]}
             alt=""
@@ -87,6 +89,7 @@ const ImgSlider = ({ images }) => {
                 }
               >
                 <img
+                  loading="lazy"
                   key={image}
                   className="img-slider"
                   src={images[image]}

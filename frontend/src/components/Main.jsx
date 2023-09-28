@@ -3,7 +3,7 @@ import videoBg from "../assets/video/moulin-casta-video.mp4";
 const Main = () => {
   return (
     <div className="main skeleton">
-      <video src={videoBg} loop autoPlay muted />
+      <video loading="lazy" src={videoBg} loop autoPlay muted />
 
       <div className="content">
         <h1>Venez vivre une expérience unique en Haute-Corse</h1>

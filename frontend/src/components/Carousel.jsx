@@ -17,6 +17,7 @@ const Carousel = ({ images, accommodation }) => {
       </span>
       <div className="img-carousel-container">
         <img
+          loading="lazy"
           key={count}
           src={images[array[count]]}
           alt=""

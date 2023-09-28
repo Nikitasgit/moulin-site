@@ -7,7 +7,12 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="logo-container">
-        <img className="logo" src={logo} alt="logo-moulin-Casta" />
+        <img
+          loading="lazy"
+          className="logo"
+          src={logo}
+          alt="logo-moulin-Casta"
+        />
       </div>
 
       <div className="text-and-link">
@@ -29,6 +34,7 @@ const Footer = () => {
       <div className="contact-footer">
         <div className="person-contact">
           <img
+            loading="lazy"
             src={contactImg}
             alt="Person to contact"
             className="img-contact

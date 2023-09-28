@@ -156,6 +156,7 @@ const Moulin = () => {
                   ref={videoRef}
                   src={videoBg}
                   loop
+                  loading="lazy"
                   autoPlay
                   muted
                 />
