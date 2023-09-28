@@ -10,7 +10,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://moulincasta.netlify.app",
     credentials: true,
     optionsSuccessStatus: 200,
   })
