@@ -11,7 +11,6 @@
     align-items: center;
     background: rgba(255, 255, 255, 0.712);
     backdrop-filter: blur(2px);
-    overflow: hidden;
     img {
       object-fit: cover;
       max-height: 650px;
@@ -101,7 +100,7 @@
       cursor: pointer;
       font-size: 1rem;
       border-radius: 5px;
-      border: 1px solid rgb(0, 0, 0);
+      border: 1px solid rgb(135, 135, 135);
       transition: 0.4s;
       &:hover {
         background: white;
@@ -112,7 +111,7 @@
       }
     }
     .img-container {
-      border-radius: 3px;
+      border-radius: 5px;
       width: 100%;
       height: 100%;
       overflow: hidden;

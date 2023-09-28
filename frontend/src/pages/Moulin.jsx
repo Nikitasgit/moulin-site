@@ -59,7 +59,7 @@ const Moulin = () => {
     return images;
   }
   const images = importAll(
-    require.context("/public/images/img-moulin", false, /\.(png|jpe?g|svg)$/)
+    require.context("../assets/img/img-moulin", false, /\.(png|jpe?g|svg)$/)
   );
 
   return (

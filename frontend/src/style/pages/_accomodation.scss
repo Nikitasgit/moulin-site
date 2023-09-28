@@ -19,6 +19,7 @@
 
 .accomodation {
   background: rgb(244, 243, 239);
+
   text-align: left;
   position: relative;
   .accomodation-main {
@@ -47,7 +48,6 @@
         }
 
         h3 {
-          color: rgb(108, 145, 131);
           font-size: 1.1rem;
           @media screen and (max-width: 380px) {
             font-size: 0.9rem;

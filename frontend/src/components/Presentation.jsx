@@ -18,7 +18,7 @@ const Presentation = () => {
     return images;
   }
   const imgMoulin = importAll(
-    require.context("/public/images/img-moulin", false, /\.(png|jpe?g|svg)$/)
+    require.context("../assets/img/img-moulin", false, /\.(png|jpe?g|svg)$/)
   );
   const imgBergerie = importAll(
     require.context(`../assets/img/img-bergerie`, false, /\.(png|jpe?g|svg)$/)

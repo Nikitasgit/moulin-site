@@ -113,7 +113,7 @@ div:has(> .calendarWrap) {
     padding: 10px;
     border-radius: 10px;
     font-size: 1.3rem;
-    background: rgb(108, 145, 131);
+    background: rgb(150, 200, 181);
     font-weight: 700;
     letter-spacing: 1px;
     color: white;
@@ -121,7 +121,7 @@ div:has(> .calendarWrap) {
     cursor: pointer;
     transition: 0.4s;
     &:hover {
-      background: rgb(95, 128, 115);
+      background: rgb(108, 145, 131);
     }
   }
   .total {
