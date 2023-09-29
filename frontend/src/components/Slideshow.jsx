@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BiChevronLeft } from "react-icons/bi";
 import { BiChevronRight } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
-
+import { NavLink } from "react-router-dom";
 const variants = {
   initial: (direction) => {
     return {
@@ -39,7 +39,7 @@ const variants = {
     };
   },
 };
-const Slideshow = ({ images }) => {
+const Slideshow = ({ images }, accommodation) => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const nextStep = (images) => {
@@ -79,6 +79,11 @@ const Slideshow = ({ images }) => {
       <button className="nextButton" onClick={() => nextStep(images)}>
         <BiChevronRight />
       </button>
+      <NavLink
+        to={accommodation == "moulin" ? "/accomodation-1" : "/accomodation-2"}
+      >
+        <button className="more-button">Voir plus</button>
+      </NavLink>
     </div>
   );
 };

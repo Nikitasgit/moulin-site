@@ -84,7 +84,10 @@ const Presentation = () => {
                 une tranquilité comme nul part ailleurs.
               </p>
             </div>
-            <Slideshow images={imagesMoulin.slice(0, 5)} />
+            <Slideshow
+              accommodation="moulin"
+              images={imagesMoulin.slice(0, 5)}
+            />
           </div>
         </Reveal>
         <Reveal>
@@ -120,7 +123,10 @@ const Presentation = () => {
                 et à la rivière qui est à deux pas.
               </p>
             </div>
-            <Slideshow images={imagesBergerie.slice(0, 5)} />
+            <Slideshow
+              accommodation="moulin"
+              images={imagesBergerie.slice(0, 5)}
+            />
           </div>
         </Reveal>
       </div>
