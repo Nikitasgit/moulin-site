@@ -124,7 +124,7 @@ const Presentation = () => {
               </p>
             </div>
             <Slideshow
-              accommodation="moulin"
+              accommodation="bergerie"
               images={imagesBergerie.slice(0, 5)}
             />
           </div>
