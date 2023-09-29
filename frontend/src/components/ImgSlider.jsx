@@ -39,7 +39,6 @@ const variants = {
   },
 };
 const ImgSlider = ({ images }) => {
-  /*   const images = Object.keys(images); */
   const [direction, setDirection] = useState(0);
   const [toggleSlider, setToggleSlider] = useState(false);
   const [count, setCount] = useState(0);
@@ -61,18 +60,24 @@ const ImgSlider = ({ images }) => {
   };
   const handleImgClick = () => {
     setToggleSlider(true);
-    document.body.style.overflow = "hidden";
-    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
     document.addEventListener("keydown", hideOnEscape);
   }, []);
 
+  useEffect(() => {
+    if (toggleSlider) {
+      document.body.style.overflow = "hidden";
+      window.scrollTo(0, 0);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [toggleSlider]);
+
   const hideOnEscape = (e) => {
     if (e.key === "Escape") {
       setToggleSlider(false);
-      document.body.style.overflow = "unset";
     }
   };
 
@@ -95,7 +100,6 @@ const ImgSlider = ({ images }) => {
             className="close-slider"
             onClick={() => {
               setToggleSlider(false);
-              document.body.style.overflow = "unset";
             }}
           >
             <AiOutlineCloseCircle />
