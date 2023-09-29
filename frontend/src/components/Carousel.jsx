@@ -16,15 +16,19 @@ const Carousel = ({ images, accommodation }) => {
         />
       </span>
       <div className="img-carousel-container">
-        <img
-          loading="lazy"
-          key={count}
-          src={images[array[count]]}
-          alt=""
-          onClick={() => {
-            count < array.length - 1 ? setCount(count + 1) : setCount(0);
-          }}
-        />
+        {array.map((image, index) => {
+          {
+            <img
+              loading="lazy"
+              key={index}
+              src={`../assets/img/img-bergerie/${image}`}
+              alt=""
+              onClick={() => {
+                count < array.length - 1 ? setCount(count + 1) : setCount(0);
+              }}
+            />;
+          }
+        })}
       </div>
       <NavLink
         to={accommodation == "moulin" ? "/accomodation-1" : "/accomodation-2"}

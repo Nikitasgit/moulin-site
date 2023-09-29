@@ -1,11 +1,64 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-
+import { AnimatePresence, motion } from "framer-motion";
+const variants = {
+  initial: (direction) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: "ease-in",
+    /*     transition: {
+      x: {
+        type: "spring",
+        stiffness: 300,
+        damping: 50,
+        opacity: { duration: 0.3 },
+      },
+    }, */
+  },
+  exit: (direction) => {
+    return {
+      x: direction > 0 ? -1000 : 1000,
+      opacity: 0,
+      transition: "ease-in",
+      /*       transition: {
+        x: {
+          type: "spring",
+          stiffness: 300,
+          damping: 50,
+          opacity: { duration: 0.3 },
+        },
+      }, */
+    };
+  },
+};
 const ImgSlider = ({ images }) => {
-  const array = Object.keys(images);
+  /*   const images = Object.keys(images); */
+  const [direction, setDirection] = useState(0);
   const [toggleSlider, setToggleSlider] = useState(false);
   const [count, setCount] = useState(0);
+  const nextStep = (images) => {
+    setDirection(1);
+    if (count === images.length - 1) {
+      setCount(0);
+      return;
+    }
+    setCount(count + 1);
+  };
+  const prevStep = (images) => {
+    setDirection(-1);
+    if (count === 0) {
+      setCount(images.length - 1);
+      return;
+    }
+    setCount(count - 1);
+  };
   const handleImgClick = () => {
     setToggleSlider(true);
     document.body.style.overflow = "hidden";
@@ -23,17 +76,17 @@ const ImgSlider = ({ images }) => {
     }
   };
 
-  const nextOnArrow = (e) => {
+  /*   const nextOnArrow = (e) => {
     if (e.keyCode === 37) {
-      count == 0 ? setCount(array.length - 1) : setCount(count - 1);
+      prevStep(images);
     } else if (e.keyCode === 39) {
-      count < array.length - 1 ? setCount(count + 1) : setCount(0);
+      nextStep(images);
     }
     window.removeEventListener("keydown", nextOnArrow);
   };
   useEffect(() => {
     window.addEventListener("keydown", nextOnArrow);
-  }, [count, toggleSlider]);
+  }, [count, toggleSlider]); */
   return (
     <div className="imgSlider">
       {toggleSlider && (
@@ -48,42 +101,34 @@ const ImgSlider = ({ images }) => {
             <AiOutlineCloseCircle />
           </span>
 
-          <span
-            onClick={() =>
-              count == 0 ? setCount(array.length - 1) : setCount(count - 1)
-            }
-            className="left-chevron"
-          >
+          <span onClick={() => prevStep(images)} className="left-chevron">
             <BsChevronLeft />
           </span>
-
-          <img
-            loading="lazy"
-            key={count}
-            src={images[array[count]]}
-            alt=""
-            onClick={() => {
-              count < array.length - 1 ? setCount(count + 1) : setCount(0);
-            }}
-          />
-          <span
-            onClick={() => {
-              count < array.length - 1 ? setCount(count + 1) : setCount(0);
-            }}
-            className="right-chevron"
-          >
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.img
+              variants={variants}
+              animate="animate"
+              initial="initial"
+              exit="exit"
+              key={count}
+              src={images[count]}
+              alt="image"
+              custom={direction}
+            />
+          </AnimatePresence>
+          <span onClick={() => nextStep(images)} className="right-chevron">
             <BsChevronRight />
           </span>
         </div>
       )}
       <div className="grid">
-        {array.map(
+        {images.map(
           (image, index) =>
             index < 5 && (
               <div
                 key={image}
                 className={
-                  image == array[0]
+                  image == images[0]
                     ? "main img-container skeleton"
                     : "img-container skeleton"
                 }
@@ -92,10 +137,10 @@ const ImgSlider = ({ images }) => {
                   loading="lazy"
                   key={image}
                   className="img-slider"
-                  src={images[image]}
+                  src={image}
                   alt=""
                   onClick={() => {
-                    setCount(array.indexOf(image));
+                    setCount(images.indexOf(image));
                     handleImgClick();
                   }}
                 />

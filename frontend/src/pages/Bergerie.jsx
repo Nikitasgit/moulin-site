@@ -5,12 +5,12 @@ import ImgSlider from "../components/ImgSlider";
 import axios from "axios";
 import { BsHouseDoor } from "react-icons/bs";
 import { GiWaterfall, GiBarbecue, GiPillow } from "react-icons/gi";
-
 import { VscPerson } from "react-icons/vsc";
 import { MdOutlineBed } from "react-icons/md";
 import { LuBedSingle, LuParkingSquare, LuShowerHead } from "react-icons/lu";
 import videoBg from "../assets/video/beach-corsica-drone.mp4";
 import Footer from "../components/Footer";
+import ImagesBergerie from "../components/ImagesBergerie";
 import {
   PiBaseballThin,
   PiMountainsLight,
@@ -37,7 +37,7 @@ const Bergerie = () => {
       setRates(array);
     });
   }, []);
-  function importAll(r) {
+  /*   function importAll(r) {
     let images = {};
     r.keys().forEach((item) => {
       images[item.replace("./", "")] = r(item);
@@ -46,7 +46,7 @@ const Bergerie = () => {
   }
   const images = importAll(
     require.context(`../assets/img/img-bergerie`, false, /\.(png|jpe?g|svg)$/)
-  );
+  ); */
   const videoRef = useRef();
   const [videoPlay, setVideoPlay] = useState(true);
   const handleVideo = () => {
@@ -68,7 +68,7 @@ const Bergerie = () => {
             <h3>San Gavino Di Tenda, Haute-Corse</h3>
           </div>
         </div>
-        <ImgSlider images={images} />
+        <ImgSlider images={ImagesBergerie} />
 
         <div className="description-booking">
           <div className="descr-video">

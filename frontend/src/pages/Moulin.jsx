@@ -23,6 +23,7 @@ import DateRangeComp from "../components/DateRangeComp";
 import videoBg from "../assets/video/beach-corsica-drone.mp4";
 import axios from "axios";
 import Footer from "../components/Footer";
+import ImagesMoulin from "../components/ImagesMoulin";
 const Moulin = () => {
   const [defaultRate, setDefaultRate] = useState(0);
   const [rates, setRates] = useState([]);
@@ -51,7 +52,7 @@ const Moulin = () => {
       setRates(array);
     });
   }, []);
-  function importAll(r) {
+  /*   function importAll(r) {
     let images = {};
     r.keys().forEach((item) => {
       images[item.replace("./", "")] = r(item);
@@ -60,7 +61,7 @@ const Moulin = () => {
   }
   const images = importAll(
     require.context("../assets/img/img-moulin", false, /\.(png|jpe?g|svg)$/)
-  );
+  ); */
 
   return (
     <div className="accomodation">
@@ -72,7 +73,7 @@ const Moulin = () => {
             <h3>San Gavino Di Tenda, Haute-Corse</h3>
           </div>
         </div>
-        <ImgSlider images={images} />
+        <ImgSlider images={ImagesMoulin} />
         <div className="description-booking">
           <div className="descr-video">
             <div className="description">

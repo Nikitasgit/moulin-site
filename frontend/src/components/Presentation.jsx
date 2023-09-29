@@ -8,9 +8,12 @@ import { PiSwimmingPool } from "react-icons/pi";
 import { LuParkingSquare } from "react-icons/lu";
 import { GiWaterfall } from "react-icons/gi";
 import Carousel from "./Carousel";
+import Slideshow from "./Slideshow";
+import imagesMoulin from "./ImagesMoulin";
+import imagesBergerie from "./ImagesBergerie";
 
 const Presentation = () => {
-  function importAll(r) {
+  /*   function importAll(r) {
     let images = {};
     r.keys().forEach((item) => {
       images[item.replace("./", "")] = r(item);
@@ -22,7 +25,7 @@ const Presentation = () => {
   );
   const imgBergerie = importAll(
     require.context(`../assets/img/img-bergerie`, false, /\.(png|jpe?g|svg)$/)
-  );
+  ); */
   return (
     <div className="overview">
       <div className="intro">
@@ -81,7 +84,7 @@ const Presentation = () => {
                 une tranquilité comme nul part ailleurs.
               </p>
             </div>
-            <Carousel images={imgMoulin} accommodation={"moulin"} />
+            <Slideshow images={imagesMoulin.slice(0, 5)} />
           </div>
         </Reveal>
         <Reveal>
@@ -117,7 +120,7 @@ const Presentation = () => {
                 et à la rivière qui est à deux pas.
               </p>
             </div>
-            <Carousel images={imgBergerie} accommodation={"bergerie"} />
+            <Slideshow images={imagesBergerie.slice(0, 5)} />
           </div>
         </Reveal>
       </div>
