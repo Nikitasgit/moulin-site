@@ -1,9 +1,12 @@
 .infos {
-  background: url(/assets/img/saleccia-3.jpg);
+  background: url(/assets/img/saleccia-3.webp);
   height: 60vh;
   object-fit: cover;
   background-size: cover;
   background-attachment: fixed;
+  @media (hover: none) {
+    background-attachment: initial;
+  }
   .img-infos {
     height: 100%;
     max-width: 80%;

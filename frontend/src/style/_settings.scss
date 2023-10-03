@@ -26,12 +26,14 @@ $font-3: "MerriWeather regular";
 }
 
 body {
+  color: #323232;
   text-align: center;
   scroll-behavior: smooth;
-  color: #323232;
   min-height: 100vh;
 }
-
+button {
+  color: #323232;
+}
 a {
   color: inherit;
   text-decoration: inherit;

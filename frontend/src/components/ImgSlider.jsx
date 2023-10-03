@@ -65,7 +65,13 @@ const ImgSlider = ({ images }) => {
   useEffect(() => {
     document.addEventListener("keydown", hideOnEscape);
   }, []);
-
+  useEffect(() => {
+    //preloading image
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
   useEffect(() => {
     if (toggleSlider) {
       document.body.style.overflow = "hidden";

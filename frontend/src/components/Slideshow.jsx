@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiChevronLeft } from "react-icons/bi";
 import { BiChevronRight } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
@@ -58,6 +58,13 @@ const Slideshow = ({ images }, accommodation) => {
     }
     setIndex(index - 1);
   };
+  useEffect(() => {
+    //preloading image
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
   return (
     <div className="slideshow">
       <AnimatePresence initial={false} custom={direction}>

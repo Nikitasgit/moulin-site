@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import { HiMenuAlt3 } from "react-icons/hi";
-import imgBergerie from "../assets/img/img-bergerie/bergerie-1.jpg";
-import imgMoulin from "../assets/img/img-moulin/moulin-1.jpg";
+import imgBergerie from "../assets/img/img-bergerie/bergerie-1.webp";
+import imgMoulin from "../assets/img/img-moulin/moulin-1.webp";
 import logo from "../assets/img/logo-moulin-casta.png";
-
 import { outsideClick } from "./OutsideClickFunction";
 import { NavLink } from "react-router-dom";
 const NavBar = () => {
