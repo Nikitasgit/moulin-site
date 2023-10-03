@@ -145,6 +145,7 @@ const Bergerie = () => {
                   ref={videoRef}
                   src={videoBg}
                   loop
+                  playsInline
                   autoPlay
                   muted
                 />

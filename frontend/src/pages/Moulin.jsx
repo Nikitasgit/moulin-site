@@ -159,6 +159,7 @@ const Moulin = () => {
                   loop
                   loading="lazy"
                   autoPlay
+                  playsInline
                   muted
                 />
               </div>
